@@ -12,7 +12,7 @@ describe('When an engineer object is created', () => {
         expect(sammy.github).toBe('sammysgit');
     })
 
-    describe('When an engineer github is created', () => {
+    describe('When github is created', () => {
         let sammy;
         beforeEach(() => {
             sammy = new Engineer('Sammy Sossa', 2468, 'sam@samster.com', 'sammysgit')
