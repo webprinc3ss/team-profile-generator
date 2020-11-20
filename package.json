@@ -1,0 +1,26 @@
+{
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "An input page to help set up dev team profile page.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "inquirer": "^7.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webprinc3ss/team-profile-generator.git"
+  },
+  "author": "Danielle Branton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/webprinc3ss/team-profile-generator/issues"
+  },
+  "homepage": "https://github.com/webprinc3ss/team-profile-generator#readme"
+}
