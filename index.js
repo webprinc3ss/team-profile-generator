@@ -1,8 +1,10 @@
 const inquirer = require('inquirer');
-const Employee = require('./lib/Employee');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
+const generatePage = require('./src/page-template');
+const writeFile = require('./src/generate-site')
+const validator = require('validator');
 
 let manager = [];
 let engineer = [];
@@ -14,28 +16,68 @@ function promptManager() {
         .prompt([
             {   // There is only 1 manager for a team.
                 type: "input",
-                message: "Who is the manager of this project?",
-                name: "employee"
+                message: "Who is the manager of this project? (Required)",
+                name: "employee",
+                validate: employee => {
+                    if (employee) {
+                        return true;
+                    } else {
+                        console.log('Name Please!');
+                        return false;
+                    }
+                }
             },
             {
                 type: 'text',
                 name: 'id',
-                message: "What is the manager's ID number?"
+                message: "What is the manager's ID number? (Required)",
+                validate: id => {
+                    if (validator.isNumeric(id)) {
+                        return true;
+                    } else {
+                        console.log('ID please!');
+                        return false;
+                    }
+                }
             },
             {
                 type: 'text',
                 name: 'email',
-                message: "What is the manager's email?"
+                message: "What is the manager's email? (Required)",
+                validate: email => {
+                    if (validator.isEmail(email)) {
+                        return true;
+                    } else {
+                        console.log('Email Please!');
+                        return false;
+                    }
+                }
             },
             {
                 type: 'text',
                 name: 'office',
-                message: "What is the Manager's office number?"
+                message: "What is the Manager's office number? (Required)",
+                validate: office => {
+                    if (office) {
+                        return true;
+                    } else {
+                        console.log('Office number please!');
+                        return false;
+                    }
+                }
             },
             {
                 type: 'confirm',
                 name: 'moreEmployees',
-                message: "What you like to add another employee?",
+                message: "Would you like to add another employee? (Required)",
+                validate: moreEmployees => {
+                    if (moreEmployees) {
+                        return true;
+                    } else {
+                        console.log('Would you like to add another employee?');
+                        return false;
+                    }
+                }
             }
         ])
         .then(answers => {
@@ -48,7 +90,7 @@ function promptManager() {
                 console.log("Now we will ask for employee information.")
                 employeePrompt();
             } else {
-                console.log("Thank you.  Check your team page here!")
+                console.log("Thank you. Your Team page has been generated!")
             }
         })
 }
@@ -106,7 +148,7 @@ function employeePrompt() {
                     return employeePrompt();
 
                 } else {
-                    console.log("Check out the webpage!")
+                    console.log("Your Team page has been generated!")
                 }
             } else {
                 intern.push(new Intern(answers.employee, answers.id, answers.email, answers.school))
@@ -116,11 +158,46 @@ function employeePrompt() {
                     return employeePrompt();
                 } else {
                     console.log("Check out the webpage!")
+
                 }
             }
 
         })
+
 }
+
+// .then(data => {
+//     return generatePage(employeeArray)
+// })
+// .then(pageHTML => {
+//     return writeFile(pageHTML)
+// });
 
 
 promptManager();
+    // .then(employeePrompt)
+    // .then(teamData => {
+    //     return generatePage(employeeArray)
+    // })
+    // .then(pageHTML => {
+    //     return writeFile(pageHTML)
+    // });
+
+    // promptUser()
+    // .then(promptProject)
+    // .then(portfolioData => {
+    //     return generatePage(portfolioData);
+    // })
+    // .then(pageHTML => {
+    //     return writeFile(pageHTML);
+    // })
+    // .then(writeFileResponse => {
+    //     console.log(writeFileResponse);
+    //     return copyFile();
+    // })
+    // .then(copyFileResponse => {
+    //     console.log(copyFileResponse);
+    // })
+    // .catch(err => {
+    //     console.log(err);
+    // });
