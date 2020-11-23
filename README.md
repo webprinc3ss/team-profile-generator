@@ -24,7 +24,9 @@
   Bootstrap was used in the styling of this project: https://getbootstrap.com/
 
   [Github Pages](https://webprinc3ss.github.io/team-profile-generator/)
-  [Link to Demo](https://drive.google.com/file/d/15D-8fZEefxHCMzDap2_NxAWQDkJDv9hD/view)
+  
+  [Link to Demo](https://drive.google.com/file/d/1e9Etv2_t_DXYGxO8an0ycYDXvgieHEXn/view)
+
   ![Dashboard](images/tpg.jpg)
 
   ## Installation Instructions
