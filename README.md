@@ -1,5 +1,5 @@
 
-  # Readme Generator
+  # Team Profile Generator
 
    [![License](https://img.shields.io/badge/License-MIT-yellow)](https://opensource.org/licenses/MIT)
 
@@ -21,8 +21,11 @@
 
   Inquirer is used to prompt questions for the user which is then written, using the fs.write module, to a template which prints out the HTML file.
 
+  Bootstrap was used in the styling of this project: https://getbootstrap.com/
+
   [Github Pages](https://webprinc3ss.github.io/team-profile-generator/)
   [Link to Demo](https://drive.google.com/file/d/15D-8fZEefxHCMzDap2_NxAWQDkJDv9hD/view)
+  ![Dashboard](images/tpg.jpg)
 
   ## Installation Instructions
   1. [Clone the repo](https://github.com/webprinc3ss/team-profile-generator.git)

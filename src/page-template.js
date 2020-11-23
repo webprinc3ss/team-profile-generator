@@ -5,9 +5,9 @@ const generateCards = data => {
         <div class="card border border-primary rounded shadow" style="width: 18rem; padding: 8px">
             <h3>Manager</h3>
             <h4>${job.name}</h4>
-            <p>ID: ${job.id}</p>
-            <p>Email: <a href="mailto:${job.email}">${job.email}</a></p>
-            <p>Office Number: ${job.office}</p>
+            <p><b>ID:</b> ${job.id}</p>
+            <p><b>Email:</b> <a href="mailto:${job.email}">${job.email}</a></p>
+            <p><b>Office Number</b> ${job.office}</p>
         </div>
         `
             ;
@@ -18,9 +18,9 @@ const generateCards = data => {
         <div class="card border border-warning rounded shadow" style="width: 18rem;  padding: 8px">
             <h3>Engineer</h3>
             <h4>${job.name}</h4>
-            <p>ID: ${job.id}</p>
-            <p>Email: <a href="mailto:${job.email}">${job.email}</a></p>
-            <p> Github: <a href="https://github.com/${job.github}" target="_blank">${job.github}</a></p>
+            <p><b>ID:</b> ${job.id}</p>
+            <p><b>Email:</b> <a href="mailto:${job.email}">${job.email}</a></p>
+            <p><b>Github:</b> <a href="https://github.com/${job.github}" target="_blank">${job.github}</a></p>
         </div>
         `
             ;
@@ -30,8 +30,8 @@ const generateCards = data => {
         return `
         <div class="card border border-success rounded shadow" style="width: 18rem;  padding: 8px">
         <h3>Intern</h3>
-        <h3>${job.name}</h3>
-            <p>ID: ${job.id}</p>
+        <h4>${job.name}</h4>
+            <p><b>ID:</b> ${job.id}</p>
             <p><b>Email:</b> <a href="mailto:${job.email}">${job.email}</a></p>
             <p><b>School:</b> ${job.school}</p>
         </div>
@@ -62,7 +62,7 @@ module.exports = templateData => {
     </head>
     
     <body>
-        <header class="navbar text-light bg-dark shadow">
+        <header class="navbar text-light bg-primary shadow">
             <div class=" mx-auto px-md-5 text-white">
                 <h1>My Team</h1>
             </div>
@@ -77,7 +77,7 @@ module.exports = templateData => {
         <footer class="container mx-auto">
         <div class="row justify-center">
             <div class=" mx-auto px-md-1"><BR><BR>
-                <p>Designed with ❤️ by https://github.com/webprinc3ss</p>
+                <p>Designed with ❤️ by <a href="https://github.com/webprinc3ss">webprinc3ss</a></p>
             </div>
         </div>
     </footer>
