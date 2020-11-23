@@ -77,7 +77,7 @@ module.exports = templateData => {
         <footer class="container mx-auto">
         <div class="row justify-center">
             <div class=" mx-auto px-md-1"><BR><BR>
-                <p>Designed with ❤️ by Danielle</p>
+                <p>Designed with ❤️ by https://github.com/webprinc3ss</p>
             </div>
         </div>
     </footer>
