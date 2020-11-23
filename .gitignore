@@ -1,6 +1,3 @@
 node_modules
 .DS_Store
-index_old.js
-index_old2.js
-test.js
-index3.js
+/testcode

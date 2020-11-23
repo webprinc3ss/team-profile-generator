@@ -1,44 +1,51 @@
 const generateCards = data => {
 
-    const manager = data.manager.map(function (job) {
-        let managerHtml = `
-        <div class="card" style="width: 18rem;">
-            <h2>${job.name}</h2>
-            <h4>Manager<h4>
+    const manager = data[0].map(function (job) {
+        return `
+        <div class="card border border-primary rounded shadow" style="width: 18rem; padding: 8px">
+            <h3>Manager</h3>
+            <h4>${job.name}</h4>
             <p>ID: ${job.id}</p>
             <p>Email: <a href="mailto:${job.email}">${job.email}</a></p>
             <p>Office Number: ${job.office}</p>
         </div>
         `
-        return managerHtml
+            ;
     });
 
-    const engineer = data.engineer.map(function (job) {
-        let engineerHtml = `
-        <div class="card" style="width: 18rem;">
-            <h2>${job.name}</h2>
-            <h4>Engineer<h4>
+    const engineer = data[1].map(function (job) {
+        return `
+        <div class="card border border-warning rounded shadow" style="width: 18rem;  padding: 8px">
+            <h3>Engineer</h3>
+            <h4>${job.name}</h4>
             <p>ID: ${job.id}</p>
             <p>Email: <a href="mailto:${job.email}">${job.email}</a></p>
             <p> Github: <a href="https://github.com/${job.github}" target="_blank">${job.github}</a></p>
         </div>
         `
-        return engineerHtml
+            ;
     })
 
-    const intern = data.intern.map(function (job) {
-        let internHtml = `
-        <div class="card" style="width: 18rem;">
-            <h2>${job.name}</h2>
-            <h4>Intern<h4>
+    const intern = data[2].map(function (job) {
+        return `
+        <div class="card border border-success rounded shadow" style="width: 18rem;  padding: 8px">
+        <h3>Intern</h3>
+        <h3>${job.name}</h3>
             <p>ID: ${job.id}</p>
-            <p>Email: <a href="mailto:${job.email}">${job.email}</a></p>
-            <p> School: ${job.school}</p>
+            <p><b>Email:</b> <a href="mailto:${job.email}">${job.email}</a></p>
+            <p><b>School:</b> ${job.school}</p>
         </div>
-        `
-        return internHtml
+        `;
+
     })
-    return [manager, engineer, intern]
+
+    if (engineer.length == 0) {
+        return manager + intern + ""
+    } else if (intern.length == 0) {
+        return manager + engineer + ""
+    } else {
+        return manager + engineer + intern + ""
+    }
 }
 
 module.exports = templateData => {
@@ -55,18 +62,25 @@ module.exports = templateData => {
     </head>
     
     <body>
-        <header class="navbar text-light bg-dark">
+        <header class="navbar text-light bg-dark shadow">
             <div class=" mx-auto px-md-5 text-white">
                 <h1>My Team</h1>
             </div>
         </header>
         <main class="container">
             <div class="row justify-center">
-                <div class="card-deck">
+            <div class="card-deck mx-auto" style="margin-top: 20px !important;">
             ${generateCards(templateData)}
             </div>
             </div>
         </main>
+        <footer class="container mx-auto">
+        <div class="row justify-center">
+            <div class=" mx-auto px-md-1"><BR><BR>
+                <p>Designed with ❤️ by Danielle</p>
+            </div>
+        </div>
+    </footer>
     </body>    
         `
 }
