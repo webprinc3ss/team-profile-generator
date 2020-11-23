@@ -27,8 +27,6 @@
   
   [Link to Demo](https://drive.google.com/file/d/1e9Etv2_t_DXYGxO8an0ycYDXvgieHEXn/view)
 
-  [Sample HTML Output](https://webprinc3ss.github.io/team-profile-generator/)
-
   ![Dashboard](images/tpg.jpg)
 
   ## Installation Instructions
